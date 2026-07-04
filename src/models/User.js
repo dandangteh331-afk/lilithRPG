@@ -37,6 +37,11 @@ function createDefaultUser(telegramName) {
       levelUpsThisQuest: 0
     },
     hasLuckyAmulet: false,
+    experiment: {
+      selectedWeaponId: null,
+      characterSlots:   new Array(6).fill(null),
+      weaponSlots:      new Array(6).fill(null)
+    },
     registeredAt: Date.now()
   };
 }
@@ -68,6 +73,11 @@ class UserModel {
     if (user.stats.totalLoot    === undefined) user.stats.totalLoot    = 0;
     if (user.stats.skillsBought === undefined) user.stats.skillsBought = 0;
     if (user.stats.artefaksBought === undefined) user.stats.artefaksBought = 0;
+    if (!user.experiment) user.experiment = {
+      selectedWeaponId: null,
+      characterSlots:   new Array(6).fill(null),
+      weaponSlots:      new Array(6).fill(null)
+    };
 
     // Migrate old house capacities to new values
     const capacityMap = { 1: 80, 2: 150, 3: 250, 4: 400, 5: 600 };

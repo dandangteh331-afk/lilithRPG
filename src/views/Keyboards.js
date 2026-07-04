@@ -9,7 +9,7 @@ function mainMenu() {
     [Markup.button.callback('🧪 Alkimia', 'menu_alchemy'),    Markup.button.callback('📊 Rank', 'menu_rank')],
     [Markup.button.callback('⚡ Stamina', 'menu_stamina'),    Markup.button.callback('🏆 Leaderboard', 'menu_leaderboard')],
     [Markup.button.callback('🎁 Daily', 'menu_daily'),        Markup.button.callback('🎲 Looting', 'menu_loot')],
-    [Markup.button.callback('❓ Help', 'menu_help')]
+    [Markup.button.callback('🔬 Eksperimen', 'menu_experiment'), Markup.button.callback('❓ Help', 'menu_help')]
   ]);
 }
 

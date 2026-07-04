@@ -9,6 +9,86 @@
     { "id": 7, "name": "Kumpulkan Diamond", "description": "Kumpulkan 50 diamond", "type": "collect_diamond", "target": 50, "rewardExp": 50, "rewardRupiah": 25000, "rewardDiamond": 0 },
     { "id": 8, "name": "Beli Senjata", "description": "Beli 1 senjata baru", "type": "buy_weapon", "target": 1, "rewardExp": 45, "rewardRupiah": 10000, "rewardDiamond": 5 },
     { "id": 9, "name": "Turun Dungeon", "description": "Selesaikan 1 lantai dungeon", "type": "dungeon", "target": 1, "rewardExp": 80, "rewardRupiah": 30000, "rewardDiamond": 15 },
-    { "id": 10, "name": "Master Fisher", "description": "Tangkap ikan Legendary", "type": "fish_legendary", "target": 1, "rewardExp": 150, "rewardRupiah": 50000, "rewardDiamond": 25 }
+    { "id": 10, "name": "Master Fisher", "description": "Tangkap ikan Legendary", "type": "fish_legendary", "target": 1, "rewardExp": 150, "rewardRupiah": 50000, "rewardDiamond": 25 },
+
+    { "id": 101, "name": "🗡️ Ujian Mythos I — Pemburu Naga",
+      "description": "Kalahkan 50 lantai dungeon dan tangkap 30 ikan Legendary. Ini hanyalah permulaan.",
+      "type": "mythic_trial_1",
+      "rank": "Mythos",
+      "conditions": [
+        { "type": "dungeon", "target": 50 },
+        { "type": "fish_legendary", "target": 30 }
+      ],
+      "rewardExp": 50000, "rewardRupiah": 500000000, "rewardDiamond": 5000,
+      "rewardWeapon": { "name": "Pedang Mythos Nol", "attack": 5000 },
+      "desc": "Selesaikan 50 lantai dungeon & tangkap 30 ikan Legendary." },
+
+    { "id": 102, "name": "🗡️ Ujian Mythos II — Sang Penakluk",
+      "description": "Kalahkan 100 lantai dungeon, kumpulkan 10 juta rupiah, dan beli 5 senjata berbeda.",
+      "type": "mythic_trial_2",
+      "rank": "Mythos",
+      "conditions": [
+        { "type": "dungeon", "target": 100 },
+        { "type": "collect_rupiah", "target": 10000000 },
+        { "type": "buy_weapon", "target": 5 }
+      ],
+      "rewardExp": 120000, "rewardRupiah": 2000000000, "rewardDiamond": 15000,
+      "rewardWeapon": { "name": "Pedang Mythos I", "attack": 7500 },
+      "desc": "Taklukkan 100 lantai, kumpulkan 10jt rupiah, beli 5 senjata." },
+
+    { "id": 103, "name": "🗡️ Ujian Mythos III — Tangan Emas",
+      "description": "Lakukan looting 500 kali, kerja 300 kali, dan kumpulkan 50 juta rupiah. Keringat dan darah.",
+      "type": "mythic_trial_3",
+      "rank": "Mythos",
+      "conditions": [
+        { "type": "loot", "target": 500 },
+        { "type": "work", "target": 300 },
+        { "type": "collect_rupiah", "target": 50000000 }
+      ],
+      "rewardExp": 300000, "rewardRupiah": 5000000000, "rewardDiamond": 35000,
+      "rewardWeapon": { "name": "Pedang Mythos II", "attack": 10000 },
+      "desc": "Loot 500x, kerja 300x, kumpulkan 50 juta rupiah." },
+
+    { "id": 104, "name": "🗡️ Ujian Mythos IV — Sang Legenda Sejati",
+      "description": "Tangkap semua jenis ikan (40 spesies), selesaikan 100 lantai dungeon 3 kali, dan capai level 500.",
+      "type": "mythic_trial_4",
+      "rank": "Mythos",
+      "conditions": [
+        { "type": "fish_species", "target": 40 },
+        { "type": "dungeon_total", "target": 300 },
+        { "type": "level_up", "target": 500 }
+      ],
+      "rewardExp": 800000, "rewardRupiah": 10000000000, "rewardDiamond": 80000,
+      "rewardWeapon": { "name": "Pedang Mythos III", "attack": 15000 },
+      "desc": "Tangkap 40 spesies ikan, selesaikan 300 dungeon, capai level 500." },
+
+    { "id": 105, "name": "🗡️ Ujian Mythos V — Penghancur Bintang",
+      "description": "Looting 2000 kali, kalahkan lantai 110 sebanyak 10 kali, dan kumpulkan 500 juta rupiah. Hanya sedikit yang bisa melewati ini.",
+      "type": "mythic_trial_5",
+      "rank": "Mythos",
+      "conditions": [
+        { "type": "loot", "target": 2000 },
+        { "type": "dungeon_floor_110", "target": 10 },
+        { "type": "collect_rupiah", "target": 500000000 }
+      ],
+      "rewardExp": 2000000, "rewardRupiah": 50000000000, "rewardDiamond": 200000,
+      "rewardWeapon": { "name": "Pedang Mythos Sejati", "attack": 25000 },
+      "desc": "Loot 2000x, lantai 110 sebanyak 10x, 500 juta rupiah." },
+
+    { "id": 106, "name": "🗡️ Ujian Mythos FINAL — Sang Pencipta Hancur",
+      "description": "Selesaikan semua 5 Ujian Mythos sebelumnya, capai level 1000, kumpulkan semua 10 artefak, kuasai semua 10 skill, dan kalahkan lantai 110 sebanyak 100 kali. Legenda sejati lahir dari sini.",
+      "type": "mythic_trial_final",
+      "rank": "Mythos",
+      "conditions": [
+        { "type": "complete_mythic_quests", "target": 5 },
+        { "type": "level_up", "target": 1000 },
+        { "type": "collect_artifacts", "target": 10 },
+        { "type": "collect_skills", "target": 10 },
+        { "type": "dungeon_floor_110", "target": 100 }
+      ],
+      "rewardExp": 99999999, "rewardRupiah": 999999999999, "rewardDiamond": 999999,
+      "rewardWeapon": { "name": "Pedang Asal-Usul", "attack": 1500 },
+      "rewardTitle": "☆ Sang Pencipta Hancur ☆",
+      "desc": "Quest paling sulit. Hanya satu: jadilah legenda." }
   ]
 }

@@ -28,6 +28,20 @@ const { showRank } = require('./controllers/RankController');
 const { showStamina, usePotion, showWeapon } = require('./controllers/StaminaController');
 const { showLeaderboard, claimDaily } = require('./controllers/LeaderboardController');
 const { showLootMenu, doLoot } = require('./controllers/LootController');
+const {
+  showExperiment,
+  showWeaponPick,
+  selectWeapon,
+  showWeaponSlotMenu,
+  showWeaponGemPicker,
+  setWeaponSlotGem,
+  removeWeaponSlotGem,
+  showCharSlotMenu,
+  showCharGemPicker,
+  setCharSlotGem,
+  removeCharSlotGem,
+  resetExperiment
+} = require('./controllers/ExperimentController');
 const { mainMenu, mainMenuText } = require('./views/Messages');
 
 function createBot() {
@@ -83,6 +97,7 @@ function createBot() {
   bot.action('menu_daily',       async (ctx) => { await ctx.answerCbQuery(); await claimDaily(ctx); });
   bot.action('menu_help',        async (ctx) => { await ctx.answerCbQuery(); await handleHelp(ctx); });
   bot.action('menu_loot',        async (ctx) => { await ctx.answerCbQuery(); await showLootMenu(ctx); });
+  bot.action('menu_experiment',  async (ctx) => { await ctx.answerCbQuery(); await showExperiment(ctx); });
 
   // ─── Profile ─────────────────────────────────────────────────────────────────
   bot.action('profile_edit_name',   startEditName);
@@ -97,6 +112,50 @@ function createBot() {
 
   // ─── Looting ─────────────────────────────────────────────────────────────────
   bot.action('loot_do', doLoot);
+
+  // ─── Experiment ───────────────────────────────────────────────────────────────
+  // Main
+  bot.action('exp_reset',      async (ctx) => { await ctx.answerCbQuery(); await resetExperiment(ctx); });
+  bot.action('exp_wslot_menu', async (ctx) => { await ctx.answerCbQuery(); await showWeaponSlotMenu(ctx); });
+  bot.action('exp_cslot_menu', async (ctx) => { await ctx.answerCbQuery(); await showCharSlotMenu(ctx); });
+
+  // Weapon picker (paginated)
+  bot.action(/^exp_weapon_pick_(\d+)$/, async (ctx) => {
+    await ctx.answerCbQuery();
+    await showWeaponPick(ctx, parseInt(ctx.match[1]));
+  });
+  // Select a specific weapon
+  bot.action(/^exp_wpick_(.+)$/, async (ctx) => {
+    await selectWeapon(ctx);
+  });
+
+  // Weapon slot — pick gem (paginated): exp_wslot_pick_{slotIdx}_{page}
+  bot.action(/^exp_wslot_pick_(\d+)_(\d+)$/, async (ctx) => {
+    await ctx.answerCbQuery();
+    await showWeaponGemPicker(ctx, parseInt(ctx.match[1]), parseInt(ctx.match[2]));
+  });
+  // Weapon slot — set gem: exp_wslot_set_{slotIdx}_{gemId}
+  bot.action(/^exp_wslot_set_(\d+)_(.+)$/, async (ctx) => {
+    await setWeaponSlotGem(ctx, parseInt(ctx.match[1]), ctx.match[2]);
+  });
+  // Weapon slot — remove gem: exp_wslot_remove_{slotIdx}
+  bot.action(/^exp_wslot_remove_(\d+)$/, async (ctx) => {
+    await removeWeaponSlotGem(ctx, parseInt(ctx.match[1]));
+  });
+
+  // Character slot — pick gem (paginated): exp_cslot_pick_{slotIdx}_{page}
+  bot.action(/^exp_cslot_pick_(\d+)_(\d+)$/, async (ctx) => {
+    await ctx.answerCbQuery();
+    await showCharGemPicker(ctx, parseInt(ctx.match[1]), parseInt(ctx.match[2]));
+  });
+  // Character slot — set gem: exp_cslot_set_{slotIdx}_{gemId}
+  bot.action(/^exp_cslot_set_(\d+)_(.+)$/, async (ctx) => {
+    await setCharSlotGem(ctx, parseInt(ctx.match[1]), ctx.match[2]);
+  });
+  // Character slot — remove gem: exp_cslot_remove_{slotIdx}
+  bot.action(/^exp_cslot_remove_(\d+)$/, async (ctx) => {
+    await removeCharSlotGem(ctx, parseInt(ctx.match[1]));
+  });
 
   // ─── Work ─────────────────────────────────────────────────────────────────────
   bot.action(/^work_do_(\d+)$/, doWork);
