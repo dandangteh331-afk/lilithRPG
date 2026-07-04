@@ -1,0 +1,14 @@
+{
+  "name": "telegram-rpg-bot",
+  "version": "1.0.0",
+  "description": "Telegram RPG Fantasy Bot dengan Telegraf",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "telegraf": "^4.16.3"
+  }
+}

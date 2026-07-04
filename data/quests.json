@@ -1,0 +1,14 @@
+{
+  "quests": [
+    { "id": 1, "name": "Mancing 3x", "description": "Tangkap 3 ikan", "type": "fish", "target": 3, "rewardExp": 20, "rewardRupiah": 5000, "rewardDiamond": 2 },
+    { "id": 2, "name": "Mancing 5x", "description": "Tangkap 5 ikan", "type": "fish", "target": 5, "rewardExp": 35, "rewardRupiah": 10000, "rewardDiamond": 5 },
+    { "id": 3, "name": "Kerja 2x", "description": "Lakukan pekerjaan 2x", "type": "work", "target": 2, "rewardExp": 30, "rewardRupiah": 8000, "rewardDiamond": 3 },
+    { "id": 4, "name": "Kerja 5x", "description": "Lakukan pekerjaan 5x", "type": "work", "target": 5, "rewardExp": 50, "rewardRupiah": 15000, "rewardDiamond": 8 },
+    { "id": 5, "name": "Naik Level", "description": "Naik 1 level", "type": "level_up", "target": 1, "rewardExp": 60, "rewardRupiah": 20000, "rewardDiamond": 10 },
+    { "id": 6, "name": "Kumpulkan Uang", "description": "Kumpulkan 50000 rupiah", "type": "collect_rupiah", "target": 50000, "rewardExp": 40, "rewardRupiah": 0, "rewardDiamond": 15 },
+    { "id": 7, "name": "Kumpulkan Diamond", "description": "Kumpulkan 50 diamond", "type": "collect_diamond", "target": 50, "rewardExp": 50, "rewardRupiah": 25000, "rewardDiamond": 0 },
+    { "id": 8, "name": "Beli Senjata", "description": "Beli 1 senjata baru", "type": "buy_weapon", "target": 1, "rewardExp": 45, "rewardRupiah": 10000, "rewardDiamond": 5 },
+    { "id": 9, "name": "Turun Dungeon", "description": "Selesaikan 1 lantai dungeon", "type": "dungeon", "target": 1, "rewardExp": 80, "rewardRupiah": 30000, "rewardDiamond": 15 },
+    { "id": 10, "name": "Master Fisher", "description": "Tangkap ikan Legendary", "type": "fish_legendary", "target": 1, "rewardExp": 150, "rewardRupiah": 50000, "rewardDiamond": 25 }
+  ]
+}

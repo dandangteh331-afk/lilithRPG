@@ -1,0 +1,19 @@
+{
+  "ranks": [
+    { "level": 1, "name": "Petualang Pemula" },
+    { "level": 10, "name": "Petualang Magang" },
+    { "level": 25, "name": "Petualang Muda" },
+    { "level": 50, "name": "Petualang Berpengalaman" },
+    { "level": 100, "name": "Ksatria" },
+    { "level": 200, "name": "Ksatria Perak" },
+    { "level": 350, "name": "Ksatria Emas" },
+    { "level": 500, "name": "Ksatria Mithril" },
+    { "level": 700, "name": "Ksatria Adamant" },
+    { "level": 900, "name": "Ksatria Naga" },
+    { "level": 1100, "name": "Pahlawan" },
+    { "level": 1300, "name": "Pahlawan Legendaris" },
+    { "level": 1500, "name": "Grand Pahlawan" },
+    { "level": 1700, "name": "Dewa Petualang" },
+    { "level": 1900, "name": "Demon Lord" }
+  ]
+}

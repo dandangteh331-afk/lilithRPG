@@ -1,0 +1,56 @@
+{
+  "recipes": [
+    {
+      "id": "stamina_potion",
+      "result": "Stamina Potion",
+      "resultType": "item",
+      "ingredients": [{ "name": "Herba", "qty": 3 }, { "name": "Air Suci", "qty": 1 }]
+    },
+    {
+      "id": "stamina_elixir",
+      "result": "Stamina Elixir",
+      "resultType": "item",
+      "ingredients": [{ "name": "Herba", "qty": 5 }, { "name": "Air Suci", "qty": 2 }, { "name": "Kristal", "qty": 1 }]
+    },
+    {
+      "id": "exp_scroll",
+      "result": "EXP Scroll",
+      "resultType": "item",
+      "ingredients": [{ "name": "Kristal", "qty": 3 }, { "name": "Bulu Phoenix", "qty": 2 }]
+    },
+    {
+      "id": "lucky_amulet",
+      "result": "Lucky Amulet",
+      "resultType": "item",
+      "ingredients": [{ "name": "Kristal", "qty": 2 }, { "name": "Batu Bertuah", "qty": 1 }, { "name": "Emas", "qty": 1 }]
+    },
+    {
+      "id": "steel_sword_plus",
+      "result": "Pedang Baja+1",
+      "resultType": "weapon",
+      "attack": 40,
+      "ingredients": [{ "name": "Pedang Baja", "qty": 1 }, { "name": "Besi", "qty": 3 }, { "name": "Batu Api", "qty": 1 }]
+    },
+    {
+      "id": "crystal_sword_plus",
+      "result": "Pedang Kristal+1",
+      "resultType": "weapon",
+      "attack": 70,
+      "ingredients": [{ "name": "Pedang Kristal", "qty": 1 }, { "name": "Kristal", "qty": 3 }, { "name": "Batu Es", "qty": 1 }]
+    },
+    {
+      "id": "dragon_sword_plus",
+      "result": "Pedang Naga+1",
+      "resultType": "weapon",
+      "attack": 110,
+      "ingredients": [{ "name": "Pedang Naga", "qty": 1 }, { "name": "Sisik Naga", "qty": 3 }, { "name": "Api Abadi", "qty": 1 }]
+    },
+    {
+      "id": "legendary_sword_plus",
+      "result": "Pedang Legendaris+1",
+      "resultType": "weapon",
+      "attack": 180,
+      "ingredients": [{ "name": "Pedang Legendaris", "qty": 1 }, { "name": "Kristal Suci", "qty": 5 }, { "name": "Emas Murni", "qty": 2 }]
+    }
+  ]
+}
