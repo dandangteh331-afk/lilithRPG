@@ -60,14 +60,33 @@ function formatError(err) {
   return lines.join('\n');
 }
 
+// ─── Errors yang aman diabaikan (bukan bug) ───────────────────────────────────
+const IGNORED_ERRORS = [
+  'message is not modified',   // user klik tombol sama 2x
+  'query is too old',          // callback query kadaluarsa
+  'message to edit not found', // pesan sudah dihapus
+  'bot was blocked by the user'
+];
+
+function isIgnoredError(err) {
+  const msg = err?.message || String(err);
+  return IGNORED_ERRORS.some(pattern => msg.includes(pattern));
+}
+
 // ─── Override bot.catch for pretty error display ─────────────────────────────
 function wrapBotErrors(bot) {
-  const originalCatch = bot.catch.bind(bot);
   bot.catch((err, ctx) => {
-    const who = ctx?.from
+    // Abaikan error yang bukan bug
+    if (isIgnoredError(err)) {
+      ctx?.answerCbQuery().catch(() => {});
+      return;
+    }
+
+    const who    = ctx?.from
       ? `user ${ctx.from.id} (@${ctx.from.username || ctx.from.first_name})`
       : 'unknown context';
     const action = ctx?.callbackQuery?.data || ctx?.message?.text || '?';
+
     console.log('');
     console.log(`${timestamp()} ${colorize(C.red + C.bold, '⚠  Bot Error')}`);
     console.log(`  ${colorize(C.gray, 'From  :')} ${colorize(C.yellow, who)}`);
